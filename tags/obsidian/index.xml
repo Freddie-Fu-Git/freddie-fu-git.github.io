@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Obsidian on Write Here</title>
+        <link>http://localhost:1313/tags/obsidian/</link>
+        <description>Recent content in Obsidian on Write Here</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>FreddieFu</copyright>
+        <lastBuildDate>Thu, 27 Mar 2025 12:37:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/obsidian/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用 1Panel 面板部署 Obsidian LiveSync 插件</title>
+        <link>http://localhost:1313/archives/9f3k7p2q/</link>
+        <pubDate>Thu, 27 Mar 2025 12:37:54 +0800</pubDate>
+        
+        <guid>http://localhost:1313/archives/9f3k7p2q/</guid>
+        <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504041859665.webp" alt="Featured image of post 使用 1Panel 面板部署 Obsidian LiveSync 插件" /&gt;&lt;p&gt;Obsidian LiveSync 部署方法&lt;/p&gt;
+&lt;p&gt;一个月体验下来，果然还是使不惯 Notion 的 Block 结构，遂将笔记软件换回 Obsidian. 翻译项目单独使用 Notion 来管理。&lt;/p&gt;
+&lt;p&gt;Obsidian LiveSync 插件文档并没有很详细，网上教程也大多使用 IBM 或者 &lt;a class=&#34;link&#34; href=&#34;http://fly.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;fly.io&lt;/a&gt; 平台部署，需要绑定外币信用卡。其实，使用 1Panel 便可以轻松部署。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 1Panel 面板的应用商店中搜索 &lt;code&gt;Obsidian LiveSync&lt;/code&gt; 点击安装&lt;/li&gt;
+&lt;li&gt;设置用户名、密码、端口号并确认安装&lt;/li&gt;
+&lt;li&gt;在防火墙放行设置的端口号&lt;/li&gt;
+&lt;li&gt;安装完成后，访问 &lt;code&gt;http://localhost:5984/_utils&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;输入步骤 3 设置的用户名和密码登录&lt;/li&gt;
+&lt;li&gt;点击 &lt;code&gt;Create Database&lt;/code&gt; 并设置好数据库名&lt;/li&gt;
+&lt;li&gt;Obsidian 中安装 &lt;code&gt;Self-hosted LiveSync&lt;/code&gt; 插件&lt;/li&gt;
+&lt;li&gt;按要求输入上述步骤中的用户名、密码、数据库名和 URI&lt;/li&gt;
+&lt;li&gt;点击 &lt;code&gt;Check&lt;/code&gt; 确认无报错，点击 &lt;code&gt;Apply&lt;/code&gt; 即可&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果也想同步到移动端，则需在 1Panel 面板上将应用反向代理，并设置域名和 SSL 证书。再将步骤 9 中的 URI 替换为反向代理的域名。&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Git on Write Here</title>
+        <link>http://localhost:1313/tags/git/</link>
+        <description>Recent content in Git on Write Here</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>FreddieFu</copyright>
+        <lastBuildDate>Mon, 25 Nov 2024 21:02:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>设置 Git 代理</title>
+        <link>http://localhost:1313/archives/f7d92018/</link>
+        <pubDate>Mon, 25 Nov 2024 21:02:34 +0800</pubDate>
+        
+        <guid>http://localhost:1313/archives/f7d92018/</guid>
+        <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091605124.webp" alt="Featured image of post 设置 Git 代理" /&gt;&lt;p&gt;在使用 GitHub 子模块安装 HUGO 主题时会提示无法连接到仓库，网上搜索后发现原因为未设置 Git 代理。在 CMD 中使用下方命令可开启代理&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global http.proxy http://127.0.0.1:port
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global https.proxy http://127.0.0.1:port
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;其中 &lt;code&gt;http://127.0.0.1&lt;/code&gt; 为本机地址，不用更改， &lt;code&gt;port&lt;/code&gt; 为使用代理的端口号。我这里使用的为 Clash for Windows， &lt;code&gt;http&lt;/code&gt; 和 &lt;code&gt;https&lt;/code&gt; 对应的端口号分别为 &lt;code&gt;7890&lt;/code&gt; 和 &lt;code&gt;7891&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;再次使用 Git 子模块命令安装主题，一般可正常下载&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on Write Here</title>
+        <link>http://localhost:1313/page/</link>
+        <description>Recent content in Pages on Write Here</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>FreddieFu</copyright>
+        <lastBuildDate>Sun, 13 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>关于</title>
+        <link>http://localhost:1313/about/</link>
+        <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/about/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;💡 博客依托于 &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HUGO&lt;/a&gt;，部署于 &lt;a class=&#34;link&#34; href=&#34;https://vercel.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Vercel&lt;/a&gt;，如果你也感兴趣，请访问 &lt;a class=&#34;link&#34; href=&#34;https://stack.jimmycai.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Stack&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Hii~~ 这里是 FreddieFu，欢迎来到我的博客 😎&lt;/p&gt;
+&lt;h2 id=&#34;关于站长&#34;&gt;关于站长
+&lt;/h2&gt;&lt;p&gt;一个专注于HR领域企业文化与培训方向的打工人 | 一个刚刚入行的游戏本地化译员&lt;/p&gt;
+&lt;h2 id=&#34;关于本站&#34;&gt;关于本站
+&lt;/h2&gt;&lt;p&gt;博客内容大概会分享这三部分的内容：&lt;/p&gt;
+&lt;p&gt;💼 &lt;strong&gt;工作：&lt;/strong&gt; 记录工作中常用但不常见的办公技巧（Excel &amp;amp; Photoshop &amp;amp; AIGC）&lt;/p&gt;
+&lt;p&gt;📚 &lt;strong&gt;学习：&lt;/strong&gt; 记录游戏本地化翻译/练习过程中的笔记以及一些其他书籍的读书笔记&lt;/p&gt;
+&lt;p&gt;🗺️ &lt;strong&gt;生活：&lt;/strong&gt; 记录一些影视动漫游戏的体验和观后感以及出游的旅行日记和旅行攻略&lt;/p&gt;
+&lt;p&gt;⌨️ &lt;strong&gt;技术：&lt;/strong&gt; 记录博客装修优化的过程文档&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>归档</title>
+        <link>http://localhost:1313/archives/</link>
+        <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>搜索</title>
+        <link>http://localhost:1313/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/search/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>友链</title>
+        <link>http://localhost:1313/links/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/links/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

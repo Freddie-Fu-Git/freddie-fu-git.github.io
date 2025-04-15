@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>技术 on Write Here</title>
+        <link>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/</link>
+        <description>Recent content in 技术 on Write Here</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>FreddieFu</copyright>
+        <lastBuildDate>Wed, 12 Mar 2025 21:30:37 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>配置 Morethanlog 主题</title>
+        <link>http://localhost:1313/archives/0m3s8z9v/</link>
+        <pubDate>Wed, 12 Mar 2025 21:30:37 +0800</pubDate>
+        
+        <guid>http://localhost:1313/archives/0m3s8z9v/</guid>
+        <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504132123185.png" alt="Featured image of post 配置 Morethanlog 主题" /&gt;&lt;p&gt;配置 Notion 博客 Morethan-log 主题&lt;/p&gt;
+&lt;p&gt;本地化翻译工作量逐渐上来了，继续使用 Obsidian 记笔记，进行翻译项目管理和统计逐渐变得困难，索性便将笔记、博客、翻译项目统计，全部迁移至 Notion 这个 All in One 的平台。&lt;/p&gt;
+&lt;p&gt;Notion 平台本身支持把页面发布为网站，但如果使用自定义域名的话，需要开通 PLUS 版本会员。Nobelium, NotionNext 等 Notion 建站工具可以免费将 Notion 页面发布为博客，并且可以自定义域名，但 Nobelium 项目年久失修，按照文档部署失败，而 NotionNext 中的主题少了一些精致，所以最终选择了这款 Morethan-log 作为 Notion 博客的建站工具。&lt;/p&gt;
+&lt;h2 id=&#34;部署方式&#34;&gt;部署方式
+&lt;/h2&gt;&lt;p&gt;同 Nobelium, NotionNext 相同，Morethan-log 博客部署也十分简单，复制 Notion 模板，Fork GitHub 上的项目，到 Vercel 中部署。这里不再赘述，感兴趣可以访问项目地址查看。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/morethanmin/morethan-log&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub - morethanmin/morethan-log: 😎 A static blog using notion database&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;装修笔记&#34;&gt;装修笔记
+&lt;/h2&gt;&lt;p&gt;这里简单记录一下，我的博客迁移过程。&lt;/p&gt;
+&lt;h3 id=&#34;首页头像和标签栏-favicon-设置&#34;&gt;首页头像和标签栏 favicon 设置
+&lt;/h3&gt;&lt;p&gt;头像和标签栏 favicon 设置相对简单，替换根目录下 &lt;code&gt;public&lt;/code&gt; 文件夹内对应的图片素材即可。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;注意：&lt;/strong&gt; 文件名和文件类型都需要保持一致&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;首页-profile-栏个人信息设置&#34;&gt;首页 Profile 栏个人信息设置
+&lt;/h3&gt;&lt;p&gt;在项目根目录下 &lt;code&gt;site.config.js&lt;/code&gt; 文件内进行修改即可。该文件内可以修改博客相当多的基础信息，包括：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;姓名、角色、个人介绍、社交媒体信息&lt;/li&gt;
+&lt;li&gt;项目名称、项目地址&lt;/li&gt;
+&lt;li&gt;博客名称、博客简介、主题颜色&lt;/li&gt;
+&lt;li&gt;谷歌数据统计插件、评论插件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;小站尚未引入评论插件，原有有二：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;morethan-log 对于 Cusdis 评论插件适配似乎并不好，基本处于不可用的状态&lt;/li&gt;
+&lt;li&gt;utterance 评论强制使用 GitHub 登录，考虑到小站内容主要围绕观后感、读后感、本地化翻译、以及日常工作中的 Excel 和 Photoshop 使用笔记为主，受众可能同我一样是非技术人员，并没有 GitHub, 所以放弃使用 utterance 评论&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;目前站长正在同 AI 疯狂输出，试图引入 Waline 评论系统，有进展会新开文章同步，在此之前，有问题可通过右侧信息栏邮箱联系。&lt;/p&gt;
+&lt;h2 id=&#34;文章页头像不显示问题&#34;&gt;文章页头像不显示问题
+&lt;/h2&gt;&lt;p&gt;进入文章页，发现主题作者可正常显示，站长新发布的文章，作者头像无法正常显示。使用 F12 选择器进行定位，发现问题出在头像地址上：&lt;/p&gt;
+&lt;p&gt;修改项目根目录下 &lt;code&gt;next.config.js&lt;/code&gt; 文件，将网址由 &lt;code&gt;s3-us-west-2.amazonaws.com&lt;/code&gt; 修改为 &lt;code&gt;s3.us-west-2.amazonaws.com&lt;/code&gt; 之后 Push 到 GitHub 上即可。&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>设置 Git 代理</title>
+        <link>http://localhost:1313/archives/f7d92018/</link>
+        <pubDate>Mon, 25 Nov 2024 21:02:34 +0800</pubDate>
+        
+        <guid>http://localhost:1313/archives/f7d92018/</guid>
+        <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091605124.webp" alt="Featured image of post 设置 Git 代理" /&gt;&lt;p&gt;在使用 GitHub 子模块安装 HUGO 主题时会提示无法连接到仓库，网上搜索后发现原因为未设置 Git 代理。在 CMD 中使用下方命令可开启代理&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global http.proxy http://127.0.0.1:port
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global https.proxy http://127.0.0.1:port
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;其中 &lt;code&gt;http://127.0.0.1&lt;/code&gt; 为本机地址，不用更改， &lt;code&gt;port&lt;/code&gt; 为使用代理的端口号。我这里使用的为 Clash for Windows， &lt;code&gt;http&lt;/code&gt; 和 &lt;code&gt;https&lt;/code&gt; 对应的端口号分别为 &lt;code&gt;7890&lt;/code&gt; 和 &lt;code&gt;7891&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;再次使用 Git 子模块命令安装主题，一般可正常下载&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>安装 HUGO</title>
+        <link>http://localhost:1313/archives/1be48c19/</link>
+        <pubDate>Sun, 24 Nov 2024 23:12:44 +0800</pubDate>
+        
+        <guid>http://localhost:1313/archives/1be48c19/</guid>
+        <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091602852.webp" alt="Featured image of post 安装 HUGO" /&gt;&lt;p&gt;HUGO博客安装比较简单，跟着 &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/installation/windows/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows | Hugo&lt;/a&gt; 即可轻松完成安装&lt;/p&gt;
+&lt;h2 id=&#34;环境配置&#34;&gt;环境配置
+&lt;/h2&gt;&lt;p&gt;安装HUGO博客需要电脑已经安装Git，若没有安装可以访问 &lt;a class=&#34;link&#34; href=&#34;https://git-scm.com/download/win&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Git for Windows&lt;/a&gt; 下载安装&lt;/p&gt;
+&lt;h2 id=&#34;使用-winget-安装-hugo&#34;&gt;使用 WinGet 安装 HUGO
+&lt;/h2&gt;&lt;p&gt;先在 Microsoft Store 中搜索安装 Widgets for UniGetUI (formerly WingetUI)&lt;/p&gt;
+&lt;p&gt;之后使用管理员身份打开 Windows PowerShell, 并运行下方指令安装 HUGO&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;winget install Hugo.Hugo.Extended&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;安装完成后，继续输入下方指令判断是否安装成功&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hugo version&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;成功显示 HUGO 版本，即为安装成功&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
