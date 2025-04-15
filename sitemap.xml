@@ -2,119 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://example.com/post/</loc>
     <lastmod>2025-04-05T21:44:51+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2025-04-05T21:44:51+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-04-05T21:44:51+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://example.com/</loc>
     <lastmod>2025-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E6%94%BB%E7%95%A5/</loc>
-    <lastmod>2025-04-05T21:44:51+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E6%97%85%E8%A1%8C/</loc>
-    <lastmod>2025-04-05T21:44:51+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E6%97%A5%E6%9C%AC/</loc>
-    <lastmod>2025-04-05T21:44:51+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/archives/c91533ff/</loc>
-    <lastmod>2025-04-05T21:44:51+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2025-04-05T21:44:51+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/1panel/</loc>
-    <lastmod>2025-03-27T12:37:54+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/obsidian/</loc>
-    <lastmod>2025-03-27T12:37:54+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E5%B7%A5%E4%BD%9C/</loc>
-    <lastmod>2025-03-27T12:37:54+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/archives/9f3k7p2q/</loc>
-    <lastmod>2025-03-27T12:37:54+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/blog/</loc>
-    <lastmod>2025-03-12T21:30:37+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/morethan-log/</loc>
-    <lastmod>2025-03-12T21:30:37+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2025-03-12T21:30:37+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/archives/0m3s8z9v/</loc>
-    <lastmod>2025-03-12T21:30:37+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/notion/</loc>
-    <lastmod>2025-03-05T15:22:48+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/archives/842a5801/</loc>
-    <lastmod>2025-03-05T15:22:48+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E5%85%B6%E4%BB%96/</loc>
-    <lastmod>2025-03-05T15:22:48+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E7%99%BD%E7%AE%B1/</loc>
-    <lastmod>2025-01-10T16:08:09+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E8%A7%82%E5%90%8E%E6%84%9F/</loc>
-    <lastmod>2025-01-10T16:08:09+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/archives/05c3a514/</loc>
-    <lastmod>2025-01-10T16:08:09+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/git/</loc>
-    <lastmod>2024-11-25T21:02:34+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2024-11-25T21:02:34+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/archives/f7d92018/</loc>
-    <lastmod>2024-11-25T21:02:34+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/archives/1be48c19/</loc>
-    <lastmod>2024-11-24T23:12:44+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/archives/8c5b922b/</loc>
-    <lastmod>2024-11-23T22:07:54+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E5%90%B9%E5%93%8D%E5%90%A7%E4%B8%8A%E4%BD%8E%E9%9F%B3%E5%8F%B7/</loc>
-    <lastmod>2024-06-30T15:02:33+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/archives/13cf818c/</loc>
-    <lastmod>2024-06-30T15:02:33+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/archives/743740f6/</loc>
-    <lastmod>2024-03-24T16:58:01+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E8%91%AC%E9%80%81%E7%9A%84%E8%8A%99%E8%8E%89%E8%8E%B2/</loc>
-    <lastmod>2024-03-24T16:58:01+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/archives/83e321da/</loc>
-    <lastmod>2024-02-03T23:17:13+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E6%B8%B8%E6%88%8F%E7%8E%8B/</loc>
-    <lastmod>2024-02-03T23:17:13+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/page/</loc>
+    <loc>https://example.com/page/</loc>
     <lastmod>2025-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://example.com/about/</loc>
     <lastmod>2025-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://example.com/archives/</loc>
     <lastmod>2023-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://example.com/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/links/</loc>
+    <loc>https://example.com/tags/</loc>
+  </url><url>
+    <loc>https://example.com/search/</loc>
+  </url><url>
+    <loc>https://example.com/links/</loc>
   </url>
 </urlset>
