@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Morethan-Log on Write Here</title>
-        <link>http://localhost:1313/tags/morethan-log/</link>
+        <link>https://example.com/tags/morethan-log/</link>
         <description>Recent content in Morethan-Log on Write Here</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>FreddieFu</copyright>
-        <lastBuildDate>Wed, 12 Mar 2025 21:30:37 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/morethan-log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 12 Mar 2025 21:30:37 +0800</lastBuildDate><atom:link href="https://example.com/tags/morethan-log/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>配置 Morethanlog 主题</title>
-        <link>http://localhost:1313/archives/0m3s8z9v/</link>
+        <link>https://example.com/archives/0m3s8z9v/</link>
         <pubDate>Wed, 12 Mar 2025 21:30:37 +0800</pubDate>
         
-        <guid>http://localhost:1313/archives/0m3s8z9v/</guid>
+        <guid>https://example.com/archives/0m3s8z9v/</guid>
         <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504132123185.png" alt="Featured image of post 配置 Morethanlog 主题" /&gt;&lt;p&gt;配置 Notion 博客 Morethan-log 主题&lt;/p&gt;
 &lt;p&gt;本地化翻译工作量逐渐上来了，继续使用 Obsidian 记笔记，进行翻译项目管理和统计逐渐变得困难，索性便将笔记、博客、翻译项目统计，全部迁移至 Notion 这个 All in One 的平台。&lt;/p&gt;
 &lt;p&gt;Notion 平台本身支持把页面发布为网站，但如果使用自定义域名的话，需要开通 PLUS 版本会员。Nobelium, NotionNext 等 Notion 建站工具可以免费将 Notion 页面发布为博客，并且可以自定义域名，但 Nobelium 项目年久失修，按照文档部署失败，而 NotionNext 中的主题少了一些精致，所以最终选择了这款 Morethan-log 作为 Notion 博客的建站工具。&lt;/p&gt;
@@ -46,10 +46,10 @@
         </item>
         <item>
         <title>Welcome to Morethan Log!</title>
-        <link>http://localhost:1313/archives/842a5801/</link>
+        <link>https://example.com/archives/842a5801/</link>
         <pubDate>Wed, 05 Mar 2025 15:22:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/archives/842a5801/</guid>
+        <guid>https://example.com/archives/842a5801/</guid>
         <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504132123185.png" alt="Featured image of post Welcome to Morethan Log!" /&gt;&lt;h2 id=&#34;morethan-log&#34;&gt;morethan log
 &lt;/h2&gt;&lt;p&gt;Next.js static blog using Notion as a Content Management System (CMS). Supports both Blog format Post as well as Page format for Resume. Deployed using Vercel.&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/morethanmin/morethan-log&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

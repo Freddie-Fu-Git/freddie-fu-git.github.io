@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Git on Write Here</title>
-        <link>http://localhost:1313/tags/git/</link>
+        <link>https://example.com/tags/git/</link>
         <description>Recent content in Git on Write Here</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>FreddieFu</copyright>
-        <lastBuildDate>Mon, 25 Nov 2024 21:02:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 25 Nov 2024 21:02:34 +0800</lastBuildDate><atom:link href="https://example.com/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>设置 Git 代理</title>
-        <link>http://localhost:1313/archives/f7d92018/</link>
+        <link>https://example.com/archives/f7d92018/</link>
         <pubDate>Mon, 25 Nov 2024 21:02:34 +0800</pubDate>
         
-        <guid>http://localhost:1313/archives/f7d92018/</guid>
+        <guid>https://example.com/archives/f7d92018/</guid>
         <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091605124.webp" alt="Featured image of post 设置 Git 代理" /&gt;&lt;p&gt;在使用 GitHub 子模块安装 HUGO 主题时会提示无法连接到仓库，网上搜索后发现原因为未设置 Git 代理。在 CMD 中使用下方命令可开启代理&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

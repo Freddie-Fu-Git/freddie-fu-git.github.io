@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Notion on Write Here</title>
-        <link>http://localhost:1313/tags/notion/</link>
+        <link>https://example.com/tags/notion/</link>
         <description>Recent content in Notion on Write Here</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>FreddieFu</copyright>
-        <lastBuildDate>Wed, 05 Mar 2025 15:22:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/notion/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 05 Mar 2025 15:22:48 +0800</lastBuildDate><atom:link href="https://example.com/tags/notion/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Welcome to Morethan Log!</title>
-        <link>http://localhost:1313/archives/842a5801/</link>
+        <link>https://example.com/archives/842a5801/</link>
         <pubDate>Wed, 05 Mar 2025 15:22:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/archives/842a5801/</guid>
+        <guid>https://example.com/archives/842a5801/</guid>
         <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504132123185.png" alt="Featured image of post Welcome to Morethan Log!" /&gt;&lt;h2 id=&#34;morethan-log&#34;&gt;morethan log
 &lt;/h2&gt;&lt;p&gt;Next.js static blog using Notion as a Content Management System (CMS). Supports both Blog format Post as well as Page format for Resume. Deployed using Vercel.&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/morethanmin/morethan-log&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

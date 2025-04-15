@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>HUGO on Write Here</title>
-        <link>http://localhost:1313/tags/hugo/</link>
+        <link>https://example.com/tags/hugo/</link>
         <description>Recent content in HUGO on Write Here</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>FreddieFu</copyright>
-        <lastBuildDate>Mon, 25 Nov 2024 21:02:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 25 Nov 2024 21:02:34 +0800</lastBuildDate><atom:link href="https://example.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>设置 Git 代理</title>
-        <link>http://localhost:1313/archives/f7d92018/</link>
+        <link>https://example.com/archives/f7d92018/</link>
         <pubDate>Mon, 25 Nov 2024 21:02:34 +0800</pubDate>
         
-        <guid>http://localhost:1313/archives/f7d92018/</guid>
+        <guid>https://example.com/archives/f7d92018/</guid>
         <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091605124.webp" alt="Featured image of post 设置 Git 代理" /&gt;&lt;p&gt;在使用 GitHub 子模块安装 HUGO 主题时会提示无法连接到仓库，网上搜索后发现原因为未设置 Git 代理。在 CMD 中使用下方命令可开启代理&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -30,10 +30,10 @@
         </item>
         <item>
         <title>安装 HUGO</title>
-        <link>http://localhost:1313/archives/1be48c19/</link>
+        <link>https://example.com/archives/1be48c19/</link>
         <pubDate>Sun, 24 Nov 2024 23:12:44 +0800</pubDate>
         
-        <guid>http://localhost:1313/archives/1be48c19/</guid>
+        <guid>https://example.com/archives/1be48c19/</guid>
         <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091602852.webp" alt="Featured image of post 安装 HUGO" /&gt;&lt;p&gt;HUGO博客安装比较简单，跟着 &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/installation/windows/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Windows | Hugo&lt;/a&gt; 即可轻松完成安装&lt;/p&gt;
 &lt;h2 id=&#34;环境配置&#34;&gt;环境配置
@@ -50,10 +50,10 @@
         </item>
         <item>
         <title>Hello Hugo, Hello World</title>
-        <link>http://localhost:1313/archives/8c5b922b/</link>
+        <link>https://example.com/archives/8c5b922b/</link>
         <pubDate>Sat, 23 Nov 2024 22:07:54 +0800</pubDate>
         
-        <guid>http://localhost:1313/archives/8c5b922b/</guid>
+        <guid>https://example.com/archives/8c5b922b/</guid>
         <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091257961.webp" alt="Featured image of post Hello Hugo, Hello World" /&gt;&lt;p&gt;一年时间，终于决定把博客从 WordPress 迁移至 HUGO&lt;/p&gt;
 &lt;p&gt;原因很简单，一方面，我的文章并不多，但 WordPress 的访问速度已经有些慢了，而 HUGO 作为静态博客，则完全没有这方面的顾虑；另一方面，我逐渐开始使用 Obsidian 记录笔记/日记，WordPress 对于 MarkDown 的支持不太友好，故考虑迁移博客。&lt;/p&gt;
 </description>

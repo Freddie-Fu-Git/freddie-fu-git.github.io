@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>技术 on Write Here</title>
-        <link>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/</link>
+        <link>https://example.com/categories/%E6%8A%80%E6%9C%AF/</link>
         <description>Recent content in 技术 on Write Here</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>FreddieFu</copyright>
-        <lastBuildDate>Wed, 12 Mar 2025 21:30:37 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 12 Mar 2025 21:30:37 +0800</lastBuildDate><atom:link href="https://example.com/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>配置 Morethanlog 主题</title>
-        <link>http://localhost:1313/archives/0m3s8z9v/</link>
+        <link>https://example.com/archives/0m3s8z9v/</link>
         <pubDate>Wed, 12 Mar 2025 21:30:37 +0800</pubDate>
         
-        <guid>http://localhost:1313/archives/0m3s8z9v/</guid>
+        <guid>https://example.com/archives/0m3s8z9v/</guid>
         <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504132123185.png" alt="Featured image of post 配置 Morethanlog 主题" /&gt;&lt;p&gt;配置 Notion 博客 Morethan-log 主题&lt;/p&gt;
 &lt;p&gt;本地化翻译工作量逐渐上来了，继续使用 Obsidian 记笔记，进行翻译项目管理和统计逐渐变得困难，索性便将笔记、博客、翻译项目统计，全部迁移至 Notion 这个 All in One 的平台。&lt;/p&gt;
 &lt;p&gt;Notion 平台本身支持把页面发布为网站，但如果使用自定义域名的话，需要开通 PLUS 版本会员。Nobelium, NotionNext 等 Notion 建站工具可以免费将 Notion 页面发布为博客，并且可以自定义域名，但 Nobelium 项目年久失修，按照文档部署失败，而 NotionNext 中的主题少了一些精致，所以最终选择了这款 Morethan-log 作为 Notion 博客的建站工具。&lt;/p&gt;
@@ -46,10 +46,10 @@
         </item>
         <item>
         <title>设置 Git 代理</title>
-        <link>http://localhost:1313/archives/f7d92018/</link>
+        <link>https://example.com/archives/f7d92018/</link>
         <pubDate>Mon, 25 Nov 2024 21:02:34 +0800</pubDate>
         
-        <guid>http://localhost:1313/archives/f7d92018/</guid>
+        <guid>https://example.com/archives/f7d92018/</guid>
         <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091605124.webp" alt="Featured image of post 设置 Git 代理" /&gt;&lt;p&gt;在使用 GitHub 子模块安装 HUGO 主题时会提示无法连接到仓库，网上搜索后发现原因为未设置 Git 代理。在 CMD 中使用下方命令可开启代理&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -67,10 +67,10 @@
         </item>
         <item>
         <title>安装 HUGO</title>
-        <link>http://localhost:1313/archives/1be48c19/</link>
+        <link>https://example.com/archives/1be48c19/</link>
         <pubDate>Sun, 24 Nov 2024 23:12:44 +0800</pubDate>
         
-        <guid>http://localhost:1313/archives/1be48c19/</guid>
+        <guid>https://example.com/archives/1be48c19/</guid>
         <description>&lt;img src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091602852.webp" alt="Featured image of post 安装 HUGO" /&gt;&lt;p&gt;HUGO博客安装比较简单，跟着 &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/installation/windows/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Windows | Hugo&lt;/a&gt; 即可轻松完成安装&lt;/p&gt;
 &lt;h2 id=&#34;环境配置&#34;&gt;环境配置
