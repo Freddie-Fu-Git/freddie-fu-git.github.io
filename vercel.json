@@ -1,15 +1,14 @@
 {
   "redirects": [
     {
-      "source": "/:slug*",
-      "destination": "/archives/:slug*",
+      "source": "/(?!.*\\..+)(:slug*)",
+      "destination": "/archives$1",
       "statusCode": 301
     },
     {
-      "source": "/posts/:slug*",
-      "destination": "/archives/:slug*",
+      "source": "/posts/(?!.*\\..+)(:slug*)",
+      "destination": "/archives$1",
       "statusCode": 301
     }
   ]
 }
-    
