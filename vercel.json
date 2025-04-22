@@ -1,13 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/(?!.*\\..+)(:slug*)",
-      "destination": "/archives$1",
-      "statusCode": 301
-    },
-    {
-      "source": "/posts/(?!.*\\..+)(:slug*)",
-      "destination": "/archives$1",
+      "source": "/posts/:slug*",
+      "destination": "/archives/:slug*",
       "statusCode": 301
     }
   ]
