@@ -204,6 +204,15 @@
 
 
 
+  
+    
+      <link
+        rel="stylesheet"
+        href="/css/custom/custom.min.css"
+        crossorigin="anonymous" />
+    
+  
+
 
 
 
@@ -213,6 +222,18 @@
 
   <link rel="stylesheet" href="/css/glightbox.min.css">
 
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<script src="https://unpkg.com/cal-heatmap@4.0.0-beta.9/dist/cal-heatmap.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/cal-heatmap@4.0.0-beta.9/dist/cal-heatmap.css"></script>
+
+
+
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+
+<script src="https://unpkg.com/tippy.js@6"></script>
 
 
         <script
@@ -812,44 +833,41 @@
 
     <main class="mx-auto max-w-4xl px-4 py-6">
       
-  <div class="mx-auto max-w-4xl">
+<div class="mx-auto max-w-4xl">
     
     
-      <section class="author-section mb-12">
+    <section class="author-section mb-12">
         <div class="bg-card border-border rounded-xl border p-8 shadow-sm">
-          <div
-            class="flex flex-col items-center gap-6 text-center md:flex-row md:items-start md:text-left">
-            
-            <div class="flex-shrink-0">
-              
-                <img
-                  src="/images/avatar.webp"
-                  alt="FreddieFu"
-                  class="border-primary/20 h-24 w-24 rounded-full border-4 object-cover shadow-lg" />
-              
+            <div class="flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:text-left">
+                
+                <div class="flex-shrink-0">
+                    
+                    <img src="/images/avatar.webp" alt="FreddieFu"
+                        class="border-primary/20 h-24 w-24 rounded-full border-4 object-cover shadow-lg" />
+                    
+                </div>
+
+                
+                <div class="min-w-0 flex-1">
+                    <h1 class="text-foreground mb-2 text-3xl font-bold">
+                        FreddieFu
+                    </h1>
+
+                    
+
+                    
+                    <p class="text-foreground leading-relaxed">
+                        HR 文化培训专员 | 游戏本地化译员
+                    </p>
+                    
+
+                    
+                    
+                </div>
+                <div id="cal-heatmap"></div>
             </div>
-
-            
-            <div class="min-w-0 flex-1">
-              <h1 class="text-foreground mb-2 text-3xl font-bold">
-                FreddieFu
-              </h1>
-
-              
-
-              
-                <p class="text-foreground mb-4 leading-relaxed">
-                  HR 文化培训专员 | 游戏本地化译员
-                </p>
-              
-
-
-              
-              
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
     
 
 
@@ -891,7 +909,9 @@
     
     
 
-  </div>
+
+</div><script type="text/javascript" src="js/cal-heatmap.js"></script>
+
 
     </main>
 
