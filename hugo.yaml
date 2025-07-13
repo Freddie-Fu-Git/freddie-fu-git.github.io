@@ -150,7 +150,7 @@ params:
 
   # UI Components Control
   showThemeSwitch: true      # Set to false to hide theme style switcher (palette icon)
-  showDarkModeSwitch: true   # Set to false to hide dark mode switcher (sun/moon icon)
+  showDarkModeSwitch: false   # Set to false to hide dark mode switcher (sun/moon icon)
   showLanguageSwitch: false   # Set to false to hide language switcher
 
   # Header sticky effect
