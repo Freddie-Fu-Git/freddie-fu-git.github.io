@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Obsidian on Write Here</title>
+    <link>https://freddie-fu-git.github.io/tags/obsidian/</link>
+    <description>Recent content in Obsidian on Write Here</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 27 Mar 2025 12:37:54 +0800</lastBuildDate>
+    <atom:link href="https://freddie-fu-git.github.io/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 1Panel 面板部署 Obsidian LiveSync 插件</title>
+      <link>https://freddie-fu-git.github.io/9f3k7p2q/</link>
+      <pubDate>Thu, 27 Mar 2025 12:37:54 +0800</pubDate>
+      <guid>https://freddie-fu-git.github.io/9f3k7p2q/</guid>
+      <description>&lt;p&gt;Obsidian LiveSync 部署方法&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

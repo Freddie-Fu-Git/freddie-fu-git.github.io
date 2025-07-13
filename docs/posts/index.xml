@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Write Here</title>
-    <link>https://freddie-fu-git.github.io/</link>
-    <description>Recent content on Write Here</description>
+    <title>Posts on Write Here</title>
+    <link>https://freddie-fu-git.github.io/posts/</link>
+    <description>Recent content in Posts on Write Here</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 05 Apr 2025 21:44:51 +0800</lastBuildDate>
-    <atom:link href="https://freddie-fu-git.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://freddie-fu-git.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>日本游记：阪进阪出跟团游&#43;东京一日自由行</title>
       <link>https://freddie-fu-git.github.io/c91533ff/</link>

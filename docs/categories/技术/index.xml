@@ -1,47 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Write Here</title>
-    <link>https://freddie-fu-git.github.io/</link>
-    <description>Recent content on Write Here</description>
+    <title>技术 on Write Here</title>
+    <link>https://freddie-fu-git.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on Write Here</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 05 Apr 2025 21:44:51 +0800</lastBuildDate>
-    <atom:link href="https://freddie-fu-git.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>日本游记：阪进阪出跟团游&#43;东京一日自由行</title>
-      <link>https://freddie-fu-git.github.io/c91533ff/</link>
-      <pubDate>Sat, 05 Apr 2025 21:44:51 +0800</pubDate>
-      <guid>https://freddie-fu-git.github.io/c91533ff/</guid>
-      <description>&lt;p&gt;这是一篇鸽了很久的游记……&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>使用 1Panel 面板部署 Obsidian LiveSync 插件</title>
-      <link>https://freddie-fu-git.github.io/9f3k7p2q/</link>
-      <pubDate>Thu, 27 Mar 2025 12:37:54 +0800</pubDate>
-      <guid>https://freddie-fu-git.github.io/9f3k7p2q/</guid>
-      <description>&lt;p&gt;Obsidian LiveSync 部署方法&lt;/p&gt;</description>
-    </item>
+    <lastBuildDate>Wed, 12 Mar 2025 21:30:37 +0800</lastBuildDate>
+    <atom:link href="https://freddie-fu-git.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>配置 Morethanlog 主题</title>
       <link>https://freddie-fu-git.github.io/0m3s8z9v/</link>
       <pubDate>Wed, 12 Mar 2025 21:30:37 +0800</pubDate>
       <guid>https://freddie-fu-git.github.io/0m3s8z9v/</guid>
       <description>&lt;p&gt;配置 Notion 博客 Morethan-log 主题&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Welcome to Morethan Log!</title>
-      <link>https://freddie-fu-git.github.io/842a5801/</link>
-      <pubDate>Wed, 05 Mar 2025 15:22:48 +0800</pubDate>
-      <guid>https://freddie-fu-git.github.io/842a5801/</guid>
-      <description>&lt;h2 id=&#34;morethan-log&#34;&gt;morethan log&lt;/h2&gt;&#xA;&lt;p&gt;Next.js static blog using Notion as a Content Management System (CMS). Supports both Blog format Post as well as Page format for Resume. Deployed using Vercel.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/morethanmin/morethan-log&#34;&gt;Repository&lt;/a&gt; | &lt;a href=&#34;https://morethan-log.vercel.app/&#34;&gt;Demo Blog&lt;/a&gt; | &lt;a href=&#34;https://morethan-log.vercel.app/resume&#34;&gt;Demo Resume&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;📒 Writing posts using notion&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;No need of commiting to Github for posting anything to your website.&lt;/li&gt;&#xA;&lt;li&gt;Posts made on Notion are automaticaly updated on your site.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;📄 Use as a page as resume&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Useful for generating full page sites using Notion.&lt;/li&gt;&#xA;&lt;li&gt;Can be used for Resume, Portfolios etc.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;👀 SEO friendly&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>我感觉，现在离自己的梦想更近了一步！</title>
-      <link>https://freddie-fu-git.github.io/05c3a514/</link>
-      <pubDate>Fri, 10 Jan 2025 16:08:09 +0800</pubDate>
-      <guid>https://freddie-fu-git.github.io/05c3a514/</guid>
-      <description>&lt;p&gt;我感觉，现在离自己的梦想更近了一步！&lt;/p&gt;</description>
     </item>
     <item>
       <title>设置 Git 代理</title>
@@ -56,34 +28,6 @@
       <pubDate>Sun, 24 Nov 2024 23:12:44 +0800</pubDate>
       <guid>https://freddie-fu-git.github.io/1be48c19/</guid>
       <description>&lt;p&gt;HUGO博客安装比较简单，跟着 &lt;a href=&#34;https://gohugo.io/installation/windows/&#34;&gt;Windows | Hugo&lt;/a&gt; 即可轻松完成安装&lt;/p&gt;&#xA;&lt;h2 id=&#34;环境配置&#34;&gt;环境配置&lt;/h2&gt;&#xA;&lt;p&gt;安装HUGO博客需要电脑已经安装Git，若没有安装可以访问 &lt;a href=&#34;https://git-scm.com/download/win&#34;&gt;Git for Windows&lt;/a&gt; 下载安装&lt;/p&gt;&#xA;&lt;h2 id=&#34;使用-winget-安装-hugo&#34;&gt;使用 WinGet 安装 HUGO&lt;/h2&gt;&#xA;&lt;p&gt;先在 Microsoft Store 中搜索安装 Widgets for UniGetUI (formerly WingetUI)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hello Hugo, Hello World</title>
-      <link>https://freddie-fu-git.github.io/8c5b922b/</link>
-      <pubDate>Sat, 23 Nov 2024 22:07:54 +0800</pubDate>
-      <guid>https://freddie-fu-git.github.io/8c5b922b/</guid>
-      <description>&lt;p&gt;一年时间，终于决定把博客从 WordPress 迁移至 HUGO&lt;/p&gt;&#xA;&lt;p&gt;原因很简单，一方面，我的文章并不多，但 WordPress 的访问速度已经有些慢了，而 HUGO 作为静态博客，则完全没有这方面的顾虑；另一方面，我逐渐开始使用 Obsidian 记录笔记/日记，WordPress 对于 MarkDown 的支持不太友好，故考虑迁移博客。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>遗憾的终章「吹响吧！上低音号」第三季观后感</title>
-      <link>https://freddie-fu-git.github.io/13cf818c/</link>
-      <pubDate>Sun, 30 Jun 2024 15:02:33 +0800</pubDate>
-      <guid>https://freddie-fu-git.github.io/13cf818c/</guid>
-      <description>&lt;p&gt;然后，下一曲还会奏响吗？&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>平淡中蕴藏的感动「葬送的芙莉莲」观后感</title>
-      <link>https://freddie-fu-git.github.io/743740f6/</link>
-      <pubDate>Sun, 24 Mar 2024 16:58:01 +0800</pubDate>
-      <guid>https://freddie-fu-git.github.io/743740f6/</guid>
-      <description>&lt;p&gt;我从未想过，关于这部作品的思考和文字会如此漫长，如同一条蜿蜒的河流，时而平静，时而湍急。我反复删减，试图寻找一种恰如其分的语言来表达《葬送的芙莉莲》给我带来的感受，却发现这并非易事。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>聊一聊「游戏王」25周年特别动画短片</title>
-      <link>https://freddie-fu-git.github.io/83e321da/</link>
-      <pubDate>Sat, 03 Feb 2024 23:17:13 +0800</pubDate>
-      <guid>https://freddie-fu-git.github.io/83e321da/</guid>
-      <description>&lt;p&gt;Thank You for Playing Yu-Gi-Oh! CARD GAME for 25 Years&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -3,14 +3,13 @@
   lang="zh-CN"
   data-theme="default">
   <head>
-	<meta name="generator" content="Hugo 0.148.1">
     <meta charset="utf-8" />
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<title>Write Here</title>
+<title>吹响吧！上低音号 | Write Here</title>
 
 <meta name="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design." />
 <meta name="keywords" content="Hugo, Blog, Theme, Technology, Programming" />
@@ -18,7 +17,7 @@
 <meta name="language" content="zh-CN" />
 
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://freddie-fu-git.github.io/" />
+<link rel="canonical" href="https://freddie-fu-git.github.io/tags/%E5%90%B9%E5%93%8D%E5%90%A7%E4%B8%8A%E4%BD%8E%E9%9F%B3%E5%8F%B7/" />
 
 
 
@@ -27,9 +26,9 @@
 
 
 <link rel="manifest" href="/site.webmanifest" />
-<meta property="og:url" content="https://freddie-fu-git.github.io/">
+<meta property="og:url" content="https://freddie-fu-git.github.io/tags/%E5%90%B9%E5%93%8D%E5%90%A7%E4%B8%8A%E4%BD%8E%E9%9F%B3%E5%8F%B7/">
   <meta property="og:site_name" content="Write Here">
-  <meta property="og:title" content="Write Here">
+  <meta property="og:title" content="吹响吧！上低音号">
   <meta property="og:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="website">
@@ -38,14 +37,14 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://freddie-fu-git.github.io/images/og-default.avif">
-  <meta name="twitter:title" content="Write Here">
+  <meta name="twitter:title" content="吹响吧！上低音号">
   <meta name="twitter:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
 
 
-  <meta itemprop="name" content="Write Here">
+  <meta itemprop="name" content="吹响吧！上低音号">
   <meta itemprop="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
-  <meta itemprop="datePublished" content="2025-04-05T21:44:51+08:00">
-  <meta itemprop="dateModified" content="2025-04-05T21:44:51+08:00">
+  <meta itemprop="datePublished" content="2024-06-30T15:02:33+08:00">
+  <meta itemprop="dateModified" content="2024-06-30T15:02:33+08:00">
   <meta itemprop="image" content="https://freddie-fu-git.github.io/images/og-default.avif">
 
 
@@ -54,7 +53,7 @@
     rel="alternate"
     type="application/rss+xml"
     title="Write Here"
-    href="https://freddie-fu-git.github.io/index.xml" />
+    href="https://freddie-fu-git.github.io/tags/%E5%90%B9%E5%93%8D%E5%90%A7%E4%B8%8A%E4%BD%8E%E9%9F%B3%E5%8F%B7/index.xml" />
 
 
 
@@ -225,18 +224,6 @@
   <link rel="stylesheet" href="/css/glightbox.min.css">
 
 
-<script src="https://d3js.org/d3.v7.min.js"></script>
-
-<script src="https://unpkg.com/cal-heatmap@4.0.0-beta.9/dist/cal-heatmap.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/cal-heatmap@4.0.0-beta.9/dist/cal-heatmap.css"></script>
-
-
-
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-
-<script src="https://unpkg.com/tippy.js@6"></script>
-
 
         <script
           src="/js/main.ba969e49a7a874e6938fe689a7dcaa00cb64cb4d429c2cf98d09bde512a16c6d.js"
@@ -326,6 +313,112 @@
   <body class="bg-background text-foreground min-h-screen antialiased">
     
     
+  <div
+    id="reading-progress-container"
+    class="reading-progress-container pointer-events-none fixed top-0 right-0 left-0 z-50 transition-opacity duration-300 ease-out"
+    data-height="3"
+    data-smooth-scroll="true"
+    data-hide-on-complete="false">
+    
+    <div class="reading-progress-bg w-full"></div>
+
+    
+    <div
+      id="reading-progress-bar"
+      class="from-primary to-primary/80 reading-progress-bar 
+        transition-all duration-150 ease-out
+       absolute top-0 left-0 w-0 bg-gradient-to-r"></div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const progressContainer = document.getElementById(
+        "reading-progress-container",
+      );
+      const progressBar = document.getElementById("reading-progress-bar");
+
+      if (!progressContainer || !progressBar) return;
+
+      
+      const config = {
+        smoothScroll: progressContainer.dataset.smoothScroll === "true",
+        hideOnComplete: progressContainer.dataset.hideOnComplete === "true",
+      };
+
+      let isVisible = true;
+      let gumshoeInstance = null;
+
+      
+      function calculateProgress() {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollableHeight = documentHeight - windowHeight;
+
+        if (scrollableHeight <= 0) return 0;
+
+        return Math.min(Math.max((scrollTop / scrollableHeight) * 100, 0), 100);
+      }
+
+      
+      function updateProgress() {
+        const progress = calculateProgress();
+        progressBar.style.width = progress + "%";
+
+        
+        if (config.hideOnComplete && progress >= 99.5) {
+          if (isVisible) {
+            progressContainer.style.opacity = "0";
+            isVisible = false;
+          }
+        } else if (!isVisible) {
+          progressContainer.style.opacity = "1";
+          isVisible = true;
+        }
+      }
+
+      
+      let ticking = false;
+      function requestTick() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            updateProgress();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      
+      function init() {
+        
+        window.addEventListener("scroll", requestTick, { passive: true });
+        window.addEventListener("resize", requestTick, { passive: true });
+        document.addEventListener("visibilitychange", () => {
+          if (!document.hidden) requestTick();
+        });
+
+        
+        requestTick();
+
+        
+        window.addEventListener("beforeunload", () => {
+          window.removeEventListener("scroll", requestTick);
+          window.removeEventListener("resize", requestTick);
+        });
+      }
+
+      
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+    })();
+  </script>
 
     <header class="sticky top-0 z-50 mx-auto max-w-4xl px-4 py-6">
   <div
@@ -835,48 +928,127 @@
 
     <main class="mx-auto max-w-4xl px-4 py-6">
       
-<div class="mx-auto max-w-4xl">
+  
+  <nav
+  class="breadcrumb mb-4 md:mb-6 py-1"
+  aria-label="面包屑导航">
+  <ol class="text-muted-foreground flex items-center space-x-1 md:space-x-2 text-sm overflow-x-auto whitespace-nowrap scrollbar-hide py-1">
+    
+    <li class="flex-shrink-0">
+      <a
+        href="/"
+        class="text-muted-foreground hover:text-primary hover:bg-primary/10 flex items-center gap-0.5 md:gap-1 rounded-lg px-1 md:px-3 py-0.5 md:py-1.5 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02]">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24" aria-label="首页">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m3 12 2-2m0 0 7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+
+</svg>
+        <span class="max-w-[4rem] md:max-w-none truncate">首页</span>
+      </a>
+    </li>
+
     
     
-    <section class="author-section mb-12">
-        <div class="bg-card border-border rounded-xl border p-8 shadow-sm">
-            <div class="flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:text-left">
+      <li class="flex items-center gap-1 md:gap-2 min-w-0">
+        <span class="text-muted-foreground/50 flex-shrink-0"
+          >
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+</svg>
+        </span>
+
+        
+          
+          
+            
+            
+              
+              <span class="text-foreground flex items-center gap-0.5 md:gap-1 font-medium flex-shrink-0">
                 
-                <div class="flex-shrink-0">
-                    
-                    <img src="/images/avatar.webp" alt="FreddieFu"
-                        class="border-primary/20 h-24 w-24 rounded-full border-4 object-cover shadow-lg" />
-                    
-                </div>
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+	<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+		<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
+		<circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
+	</g>
+</svg>
+                <span class="max-w-[3rem] md:max-w-none truncate">标签</span>
+              </span>
+            
+          
+        
+      </li>
+    
 
-                
-                <div class="min-w-0 flex-1">
-                    <h1 class="text-foreground mb-2 text-3xl font-bold">
-                        FreddieFu
-                    </h1>
+  </ol>
+</nav>
 
-                    
 
-                    
-                    <p class="text-foreground leading-relaxed">
-                        HR 文化培训专员 | 游戏本地化译员
-                    </p>
-                    
 
-                    
-                    
-                </div>
-                <div id="cal-heatmap"></div>
-            </div>
-        </div>
-    </section>
+  
+  <header class="mb-8">
+    <div class="mb-4 flex items-center gap-3">
+      
+        
+  <svg class="h-6 w-6"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+	<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+		<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
+		<circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
+	</g>
+</svg>
+      
+      <h1 class="text-foreground text-3xl font-bold">
+        吹响吧！上低音号
+      </h1>
+    </div>
+
+    
+      <p class="text-muted-foreground mb-6">
+        
+          标签 &#34;吹响吧！上低音号&#34; 下的所有文章
+        
+      </p>
     
 
 
     
-    
-    
+    <div class="text-muted-foreground flex items-center gap-4 text-sm">
+      <div class="flex items-center gap-1">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+</svg>
+        <span
+          >共 1 篇文章</span
+        >
+      </div>
+      <div class="flex items-center gap-1">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+</svg>
+        <span>按时间排序</span>
+      </div>
+    </div>
+  </header>
 
+  
+  
+  
     
 
 
@@ -888,10 +1060,6 @@
 
   <section class="post-list">
     
-    
-      <div class="mb-6 flex items-center justify-between">
-        <h2 class="text-foreground text-2xl font-bold">最近文章</h2>
-      </div>
     
 
 
@@ -918,15 +1086,15 @@
 
   
   <article class="main-card group">
-    <a href="/c91533ff/" class="main-card-link block">
+    <a href="/13cf818c/" class="main-card-link block">
       <div
         class="bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 relative flex min-h-[200px] flex-col overflow-hidden rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none">
         
         <div class="block md:hidden">
           <div class="aspect-[2/1] overflow-hidden">
     <img
-      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504052355182.png"
-      alt="日本游记：阪进阪出跟团游&#43;东京一日自由行"
+      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091301190.webp"
+      alt="遗憾的终章「吹响吧！上低音号」第三季观后感"
       class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
       loading="lazy"
       onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
@@ -937,25 +1105,32 @@
         
           
           
-          <div class="absolute left-[20%] top-[20%] h-6 w-6 rounded-full border-2 border-white/80 bg-white/15"></div>
+          <div class="absolute left-[15%] top-[20%] rotate-45">
+            <div class="h-0 w-0 border-l-[10px] border-r-[10px] border-b-[16px] border-l-transparent border-r-transparent border-b-white/80"></div>
+          </div>
           
-          <div class="absolute right-[25%] top-[25%] h-5 w-5 rounded-full border border-white/70 bg-white/12"></div>
+          <div class="absolute right-[20%] top-[15%] rotate-12">
+            <div class="h-0 w-0 border-l-[8px] border-r-[8px] border-b-[12px] border-l-transparent border-r-transparent border-b-white/70"></div>
+          </div>
           
-          <div class="absolute left-[30%] bottom-[30%] h-4 w-4 rounded-full border border-white/60 bg-white/10"></div>
+          <div class="absolute left-[25%] bottom-[25%] -rotate-30">
+            <div class="h-0 w-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-white/60"></div>
+          </div>
           
-          <div class="absolute right-[20%] bottom-[20%] h-5 w-5 rounded-full border border-white/65 bg-white/13"></div>
+          <div class="absolute right-[15%] bottom-[20%] rotate-60">
+            <div class="h-0 w-0 border-l-[7px] border-r-[7px] border-b-[11px] border-l-transparent border-r-transparent border-b-white/65"></div>
+          </div>
           
-          <div class="absolute left-[45%] top-[45%] h-3 w-3 rounded-full border border-white/50 bg-white/8"></div>
+          <div class="absolute left-[45%] top-[40%] -rotate-15">
+            <div class="h-0 w-0 border-l-[5px] border-r-[5px] border-b-[8px] border-l-transparent border-r-transparent border-b-white/50"></div>
+          </div>
           
-          <div class="absolute right-[35%] top-[35%] h-2 w-2 rounded-full bg-white/50"></div>
-          <div class="absolute left-[40%] bottom-[35%] h-1.5 w-1.5 rounded-full bg-white/45"></div>
-          <div class="absolute left-[35%] top-[50%] h-1 w-1 rounded-full bg-white/40"></div>
-          <div class="absolute right-[40%] bottom-[50%] h-1 w-1 rounded-full bg-white/35"></div>
-          <div class="absolute left-[50%] top-[30%] h-1 w-1 rounded-full bg-white/30"></div>
-          <div class="absolute right-[50%] bottom-[30%] h-1 w-1 rounded-full bg-white/25"></div>
+          <div class="absolute right-[35%] top-[35%] h-2 w-2 rounded-full bg-white/40"></div>
+          <div class="absolute left-[40%] bottom-[35%] h-1.5 w-1.5 rounded-full bg-white/35"></div>
+          <div class="absolute right-[45%] bottom-[45%] h-1 w-1 rounded-full bg-white/30"></div>
           
-          <div class="absolute top-[40%] left-[15%] h-0.5 w-6 rotate-30 bg-white/25"></div>
-          <div class="absolute bottom-[40%] right-[15%] h-0.5 w-4 -rotate-30 bg-white/20"></div>
+          <div class="absolute top-[30%] left-[30%] h-0.5 w-6 rotate-45 bg-white/25"></div>
+          <div class="absolute bottom-[30%] right-[30%] h-0.5 w-4 -rotate-30 bg-white/20"></div>
         
       </div>
     </div>
@@ -968,8 +1143,8 @@
           class="absolute top-0 right-0 hidden h-full w-64 transition-opacity duration-300 group-hover:opacity-90 md:block">
           <div class="h-full w-full">
     <img
-      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504052355182.png"
-      alt="日本游记：阪进阪出跟团游&#43;东京一日自由行"
+      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091301190.webp"
+      alt="遗憾的终章「吹响吧！上低音号」第三季观后感"
       class="h-full w-full object-cover"
       loading="lazy"
       onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
@@ -980,822 +1155,32 @@
         
           
           
-          <div class="absolute left-[20%] top-[20%] h-6 w-6 rounded-full border-2 border-white/80 bg-white/15"></div>
-          
-          <div class="absolute right-[25%] top-[25%] h-5 w-5 rounded-full border border-white/70 bg-white/12"></div>
-          
-          <div class="absolute left-[30%] bottom-[30%] h-4 w-4 rounded-full border border-white/60 bg-white/10"></div>
-          
-          <div class="absolute right-[20%] bottom-[20%] h-5 w-5 rounded-full border border-white/65 bg-white/13"></div>
-          
-          <div class="absolute left-[45%] top-[45%] h-3 w-3 rounded-full border border-white/50 bg-white/8"></div>
-          
-          <div class="absolute right-[35%] top-[35%] h-2 w-2 rounded-full bg-white/50"></div>
-          <div class="absolute left-[40%] bottom-[35%] h-1.5 w-1.5 rounded-full bg-white/45"></div>
-          <div class="absolute left-[35%] top-[50%] h-1 w-1 rounded-full bg-white/40"></div>
-          <div class="absolute right-[40%] bottom-[50%] h-1 w-1 rounded-full bg-white/35"></div>
-          <div class="absolute left-[50%] top-[30%] h-1 w-1 rounded-full bg-white/30"></div>
-          <div class="absolute right-[50%] bottom-[30%] h-1 w-1 rounded-full bg-white/25"></div>
-          
-          <div class="absolute top-[40%] left-[15%] h-0.5 w-6 rotate-30 bg-white/25"></div>
-          <div class="absolute bottom-[40%] right-[15%] h-0.5 w-4 -rotate-30 bg-white/20"></div>
-        
-      </div>
-    </div>
-  
-</div>
-        </div>
-
-        
-        <div
-          class="main-card-overlay absolute top-0 right-0 hidden h-full w-64 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block"></div>
-
-        
-        <div
-          class="relative z-10 flex flex-1 flex-col justify-between p-6 md:pr-72">
-          
-          <div class="space-y-3 flex-1">
-            
-            <h3
-              class="text-foreground group-hover:text-primary line-clamp-2 text-lg leading-tight font-semibold transition-colors duration-200">
-              日本游记：阪进阪出跟团游&#43;东京一日自由行
-            </h3>
-
-            
-            
-              
-                <p
-                  class="text-muted-foreground line-clamp-2 text-sm leading-relaxed">
-                  这是一篇鸽了很久的游记……
-
-                </p>
-              
-            
+          <div class="absolute left-[15%] top-[20%] rotate-45">
+            <div class="h-0 w-0 border-l-[10px] border-r-[10px] border-b-[16px] border-l-transparent border-r-transparent border-b-white/80"></div>
           </div>
-
           
-          
-            <div class="flex-shrink-0 mt-4">
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="text-muted-foreground flex items-center gap-3 text-sm min-h-[48px] overflow-hidden">
-    
-    
-      
-
-      
-      
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="发布于"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-</svg>
-          <time datetime="2025-04-05" class="text-sm font-medium">
-            2025 年 04 月 05 日
-          </time>
-        </div>
-      
-
-      
-      
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="阅读时间"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-          <span class="text-sm font-medium">3 分钟</span>
-        </div>
-      
-
-
-      
-    
-  </div>
-
-
-
-
-            </div>
-          
-        </div>
-      </div>
-    </a>
-  </article>
-
-
-
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <article class="main-card group">
-    <a href="/9f3k7p2q/" class="main-card-link block">
-      <div
-        class="bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 relative flex min-h-[200px] flex-col overflow-hidden rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none">
-        
-        <div class="block md:hidden">
-          <div class="aspect-[2/1] overflow-hidden">
-    <img
-      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504041859665.webp"
-      alt="使用 1Panel 面板部署 Obsidian LiveSync 插件"
-      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-      loading="lazy"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-    
-    <div class="from-indigo-500/20 to-purple-500/10 relative aspect-[2/1] overflow-hidden bg-gradient-to-br" style="display: none; background-blend-mode: overlay; background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);">
-      
-      <div class="absolute inset-0">
-        
-          
-          
-          <div class="absolute left-[20%] top-[20%] h-6 w-6 rounded-full border-2 border-white/80 bg-white/15"></div>
-          
-          <div class="absolute right-[25%] top-[25%] h-5 w-5 rounded-full border border-white/70 bg-white/12"></div>
-          
-          <div class="absolute left-[30%] bottom-[30%] h-4 w-4 rounded-full border border-white/60 bg-white/10"></div>
-          
-          <div class="absolute right-[20%] bottom-[20%] h-5 w-5 rounded-full border border-white/65 bg-white/13"></div>
-          
-          <div class="absolute left-[45%] top-[45%] h-3 w-3 rounded-full border border-white/50 bg-white/8"></div>
-          
-          <div class="absolute right-[35%] top-[35%] h-2 w-2 rounded-full bg-white/50"></div>
-          <div class="absolute left-[40%] bottom-[35%] h-1.5 w-1.5 rounded-full bg-white/45"></div>
-          <div class="absolute left-[35%] top-[50%] h-1 w-1 rounded-full bg-white/40"></div>
-          <div class="absolute right-[40%] bottom-[50%] h-1 w-1 rounded-full bg-white/35"></div>
-          <div class="absolute left-[50%] top-[30%] h-1 w-1 rounded-full bg-white/30"></div>
-          <div class="absolute right-[50%] bottom-[30%] h-1 w-1 rounded-full bg-white/25"></div>
-          
-          <div class="absolute top-[40%] left-[15%] h-0.5 w-6 rotate-30 bg-white/25"></div>
-          <div class="absolute bottom-[40%] right-[15%] h-0.5 w-4 -rotate-30 bg-white/20"></div>
-        
-      </div>
-    </div>
-  
-</div>
-        </div>
-
-        
-        <div
-          class="absolute top-0 right-0 hidden h-full w-64 transition-opacity duration-300 group-hover:opacity-90 md:block">
-          <div class="h-full w-full">
-    <img
-      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504041859665.webp"
-      alt="使用 1Panel 面板部署 Obsidian LiveSync 插件"
-      class="h-full w-full object-cover"
-      loading="lazy"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-    
-    <div class="from-indigo-500/20 to-purple-500/10 relative h-full w-full overflow-hidden bg-gradient-to-br" style="display: none; background-blend-mode: overlay; background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);">
-      
-      <div class="absolute inset-0">
-        
-          
-          
-          <div class="absolute left-[20%] top-[20%] h-6 w-6 rounded-full border-2 border-white/80 bg-white/15"></div>
-          
-          <div class="absolute right-[25%] top-[25%] h-5 w-5 rounded-full border border-white/70 bg-white/12"></div>
-          
-          <div class="absolute left-[30%] bottom-[30%] h-4 w-4 rounded-full border border-white/60 bg-white/10"></div>
-          
-          <div class="absolute right-[20%] bottom-[20%] h-5 w-5 rounded-full border border-white/65 bg-white/13"></div>
-          
-          <div class="absolute left-[45%] top-[45%] h-3 w-3 rounded-full border border-white/50 bg-white/8"></div>
-          
-          <div class="absolute right-[35%] top-[35%] h-2 w-2 rounded-full bg-white/50"></div>
-          <div class="absolute left-[40%] bottom-[35%] h-1.5 w-1.5 rounded-full bg-white/45"></div>
-          <div class="absolute left-[35%] top-[50%] h-1 w-1 rounded-full bg-white/40"></div>
-          <div class="absolute right-[40%] bottom-[50%] h-1 w-1 rounded-full bg-white/35"></div>
-          <div class="absolute left-[50%] top-[30%] h-1 w-1 rounded-full bg-white/30"></div>
-          <div class="absolute right-[50%] bottom-[30%] h-1 w-1 rounded-full bg-white/25"></div>
-          
-          <div class="absolute top-[40%] left-[15%] h-0.5 w-6 rotate-30 bg-white/25"></div>
-          <div class="absolute bottom-[40%] right-[15%] h-0.5 w-4 -rotate-30 bg-white/20"></div>
-        
-      </div>
-    </div>
-  
-</div>
-        </div>
-
-        
-        <div
-          class="main-card-overlay absolute top-0 right-0 hidden h-full w-64 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block"></div>
-
-        
-        <div
-          class="relative z-10 flex flex-1 flex-col justify-between p-6 md:pr-72">
-          
-          <div class="space-y-3 flex-1">
-            
-            <h3
-              class="text-foreground group-hover:text-primary line-clamp-2 text-lg leading-tight font-semibold transition-colors duration-200">
-              使用 1Panel 面板部署 Obsidian LiveSync 插件
-            </h3>
-
-            
-            
-              
-                <p
-                  class="text-muted-foreground line-clamp-2 text-sm leading-relaxed">
-                  Obsidian LiveSync 部署方法
-
-                </p>
-              
-            
+          <div class="absolute right-[20%] top-[15%] rotate-12">
+            <div class="h-0 w-0 border-l-[8px] border-r-[8px] border-b-[12px] border-l-transparent border-r-transparent border-b-white/70"></div>
           </div>
-
           
-          
-            <div class="flex-shrink-0 mt-4">
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="text-muted-foreground flex items-center gap-3 text-sm min-h-[48px] overflow-hidden">
-    
-    
-      
-
-      
-      
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="发布于"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-</svg>
-          <time datetime="2025-03-27" class="text-sm font-medium">
-            2025 年 03 月 27 日
-          </time>
-        </div>
-      
-
-      
-      
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="阅读时间"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-          <span class="text-sm font-medium">1 分钟</span>
-        </div>
-      
-
-
-      
-    
-  </div>
-
-
-
-
-            </div>
-          
-        </div>
-      </div>
-    </a>
-  </article>
-
-
-
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <article class="main-card group">
-    <a href="/0m3s8z9v/" class="main-card-link block">
-      <div
-        class="bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 relative flex min-h-[200px] flex-col overflow-hidden rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none">
-        
-        <div class="block md:hidden">
-          <div class="aspect-[2/1] overflow-hidden">
-    <img
-      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504132123185.png"
-      alt="配置 Morethanlog 主题"
-      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-      loading="lazy"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-    
-    <div class="from-teal-500/20 to-green-500/10 relative aspect-[2/1] overflow-hidden bg-gradient-to-br" style="display: none; background-blend-mode: overlay; background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);">
-      
-      <div class="absolute inset-0">
-        
-          
-          
-          <div class="absolute left-[20%] top-[20%] h-5 w-5 rotate-45 border-2 border-white/80 bg-white/15"></div>
-          
-          <div class="absolute right-[25%] top-[25%] h-4 w-4 rotate-12 border border-white/70 bg-white/12"></div>
-          
-          <div class="absolute left-[30%] bottom-[30%] h-3 w-3 rotate-60 border border-white/60 bg-white/10"></div>
-          
-          <div class="absolute right-[20%] bottom-[20%] h-4 w-4 rotate-30 border border-white/65 bg-white/13"></div>
-          
-          <div class="absolute left-[45%] top-[45%] h-2 w-2 rotate-45 border border-white/50 bg-white/8"></div>
-          
-          <div class="absolute left-[15%] top-[40%] h-0.5 w-8 rotate-45 bg-white/40"></div>
-          <div class="absolute right-[15%] top-[35%] h-0.5 w-6 rotate-12 bg-white/35"></div>
-          <div class="absolute left-[40%] bottom-[15%] h-0.5 w-5 -rotate-30 bg-white/30"></div>
-          
-          <div class="absolute top-[35%] right-[40%] h-2 w-2 rounded-full bg-white/35"></div>
-          <div class="absolute bottom-[40%] left-[35%] h-1.5 w-1.5 rounded-full bg-white/30"></div>
-          <div class="absolute top-[50%] left-[50%] h-1 w-1 rounded-full bg-white/25"></div>
-        
-      </div>
-    </div>
-  
-</div>
-        </div>
-
-        
-        <div
-          class="absolute top-0 right-0 hidden h-full w-64 transition-opacity duration-300 group-hover:opacity-90 md:block">
-          <div class="h-full w-full">
-    <img
-      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504132123185.png"
-      alt="配置 Morethanlog 主题"
-      class="h-full w-full object-cover"
-      loading="lazy"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-    
-    <div class="from-teal-500/20 to-green-500/10 relative h-full w-full overflow-hidden bg-gradient-to-br" style="display: none; background-blend-mode: overlay; background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);">
-      
-      <div class="absolute inset-0">
-        
-          
-          
-          <div class="absolute left-[20%] top-[20%] h-5 w-5 rotate-45 border-2 border-white/80 bg-white/15"></div>
-          
-          <div class="absolute right-[25%] top-[25%] h-4 w-4 rotate-12 border border-white/70 bg-white/12"></div>
-          
-          <div class="absolute left-[30%] bottom-[30%] h-3 w-3 rotate-60 border border-white/60 bg-white/10"></div>
-          
-          <div class="absolute right-[20%] bottom-[20%] h-4 w-4 rotate-30 border border-white/65 bg-white/13"></div>
-          
-          <div class="absolute left-[45%] top-[45%] h-2 w-2 rotate-45 border border-white/50 bg-white/8"></div>
-          
-          <div class="absolute left-[15%] top-[40%] h-0.5 w-8 rotate-45 bg-white/40"></div>
-          <div class="absolute right-[15%] top-[35%] h-0.5 w-6 rotate-12 bg-white/35"></div>
-          <div class="absolute left-[40%] bottom-[15%] h-0.5 w-5 -rotate-30 bg-white/30"></div>
-          
-          <div class="absolute top-[35%] right-[40%] h-2 w-2 rounded-full bg-white/35"></div>
-          <div class="absolute bottom-[40%] left-[35%] h-1.5 w-1.5 rounded-full bg-white/30"></div>
-          <div class="absolute top-[50%] left-[50%] h-1 w-1 rounded-full bg-white/25"></div>
-        
-      </div>
-    </div>
-  
-</div>
-        </div>
-
-        
-        <div
-          class="main-card-overlay absolute top-0 right-0 hidden h-full w-64 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block"></div>
-
-        
-        <div
-          class="relative z-10 flex flex-1 flex-col justify-between p-6 md:pr-72">
-          
-          <div class="space-y-3 flex-1">
-            
-            <h3
-              class="text-foreground group-hover:text-primary line-clamp-2 text-lg leading-tight font-semibold transition-colors duration-200">
-              配置 Morethanlog 主题
-            </h3>
-
-            
-            
-              
-                <p
-                  class="text-muted-foreground line-clamp-2 text-sm leading-relaxed">
-                  配置 Notion 博客 Morethan-log 主题
-
-                </p>
-              
-            
+          <div class="absolute left-[25%] bottom-[25%] -rotate-30">
+            <div class="h-0 w-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-white/60"></div>
           </div>
-
           
-          
-            <div class="flex-shrink-0 mt-4">
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="text-muted-foreground flex items-center gap-3 text-sm min-h-[48px] overflow-hidden">
-    
-    
-      
-
-      
-      
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="发布于"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-</svg>
-          <time datetime="2025-03-12" class="text-sm font-medium">
-            2025 年 03 月 12 日
-          </time>
-        </div>
-      
-
-      
-      
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="阅读时间"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-          <span class="text-sm font-medium">2 分钟</span>
-        </div>
-      
-
-
-      
-    
-  </div>
-
-
-
-
-            </div>
-          
-        </div>
-      </div>
-    </a>
-  </article>
-
-
-
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <article class="main-card group">
-    <a href="/842a5801/" class="main-card-link block">
-      <div
-        class="bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 relative flex min-h-[200px] flex-col overflow-hidden rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none">
-        
-        <div class="block md:hidden">
-          <div class="aspect-[2/1] overflow-hidden">
-    <img
-      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504132123185.png"
-      alt="Welcome to Morethan Log!"
-      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-      loading="lazy"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-    
-    <div class="from-pink-500/20 to-rose-500/10 relative aspect-[2/1] overflow-hidden bg-gradient-to-br" style="display: none; background-blend-mode: overlay; background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);">
-      
-      <div class="absolute inset-0">
-        
-          
-          
-          <div class="absolute left-[20%] top-[20%] h-5 w-5 rotate-45 border-2 border-white/80 bg-white/15"></div>
-          
-          <div class="absolute right-[25%] top-[25%] h-4 w-4 rotate-12 border border-white/70 bg-white/12"></div>
-          
-          <div class="absolute left-[30%] bottom-[30%] h-3 w-3 rotate-60 border border-white/60 bg-white/10"></div>
-          
-          <div class="absolute right-[20%] bottom-[20%] h-4 w-4 rotate-30 border border-white/65 bg-white/13"></div>
-          
-          <div class="absolute left-[45%] top-[45%] h-2 w-2 rotate-45 border border-white/50 bg-white/8"></div>
-          
-          <div class="absolute left-[15%] top-[40%] h-0.5 w-8 rotate-45 bg-white/40"></div>
-          <div class="absolute right-[15%] top-[35%] h-0.5 w-6 rotate-12 bg-white/35"></div>
-          <div class="absolute left-[40%] bottom-[15%] h-0.5 w-5 -rotate-30 bg-white/30"></div>
-          
-          <div class="absolute top-[35%] right-[40%] h-2 w-2 rounded-full bg-white/35"></div>
-          <div class="absolute bottom-[40%] left-[35%] h-1.5 w-1.5 rounded-full bg-white/30"></div>
-          <div class="absolute top-[50%] left-[50%] h-1 w-1 rounded-full bg-white/25"></div>
-        
-      </div>
-    </div>
-  
-</div>
-        </div>
-
-        
-        <div
-          class="absolute top-0 right-0 hidden h-full w-64 transition-opacity duration-300 group-hover:opacity-90 md:block">
-          <div class="h-full w-full">
-    <img
-      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202504132123185.png"
-      alt="Welcome to Morethan Log!"
-      class="h-full w-full object-cover"
-      loading="lazy"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-    
-    <div class="from-pink-500/20 to-rose-500/10 relative h-full w-full overflow-hidden bg-gradient-to-br" style="display: none; background-blend-mode: overlay; background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);">
-      
-      <div class="absolute inset-0">
-        
-          
-          
-          <div class="absolute left-[20%] top-[20%] h-5 w-5 rotate-45 border-2 border-white/80 bg-white/15"></div>
-          
-          <div class="absolute right-[25%] top-[25%] h-4 w-4 rotate-12 border border-white/70 bg-white/12"></div>
-          
-          <div class="absolute left-[30%] bottom-[30%] h-3 w-3 rotate-60 border border-white/60 bg-white/10"></div>
-          
-          <div class="absolute right-[20%] bottom-[20%] h-4 w-4 rotate-30 border border-white/65 bg-white/13"></div>
-          
-          <div class="absolute left-[45%] top-[45%] h-2 w-2 rotate-45 border border-white/50 bg-white/8"></div>
-          
-          <div class="absolute left-[15%] top-[40%] h-0.5 w-8 rotate-45 bg-white/40"></div>
-          <div class="absolute right-[15%] top-[35%] h-0.5 w-6 rotate-12 bg-white/35"></div>
-          <div class="absolute left-[40%] bottom-[15%] h-0.5 w-5 -rotate-30 bg-white/30"></div>
-          
-          <div class="absolute top-[35%] right-[40%] h-2 w-2 rounded-full bg-white/35"></div>
-          <div class="absolute bottom-[40%] left-[35%] h-1.5 w-1.5 rounded-full bg-white/30"></div>
-          <div class="absolute top-[50%] left-[50%] h-1 w-1 rounded-full bg-white/25"></div>
-        
-      </div>
-    </div>
-  
-</div>
-        </div>
-
-        
-        <div
-          class="main-card-overlay absolute top-0 right-0 hidden h-full w-64 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block"></div>
-
-        
-        <div
-          class="relative z-10 flex flex-1 flex-col justify-between p-6 md:pr-72">
-          
-          <div class="space-y-3 flex-1">
-            
-            <h3
-              class="text-foreground group-hover:text-primary line-clamp-2 text-lg leading-tight font-semibold transition-colors duration-200">
-              Welcome to Morethan Log!
-            </h3>
-
-            
-            
-              
-                <p
-                  class="text-muted-foreground line-clamp-2 text-sm leading-relaxed">
-                  morethan log Next.js static blog using Notion as a Content Management System (CMS). Supports both Blog format Post as well as Page format for Resume. Deployed …
-                </p>
-              
-            
+          <div class="absolute right-[15%] bottom-[20%] rotate-60">
+            <div class="h-0 w-0 border-l-[7px] border-r-[7px] border-b-[11px] border-l-transparent border-r-transparent border-b-white/65"></div>
           </div>
-
           
-          
-            <div class="flex-shrink-0 mt-4">
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="text-muted-foreground flex items-center gap-3 text-sm min-h-[48px] overflow-hidden">
-    
-    
-      
-
-      
-      
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="发布于"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-</svg>
-          <time datetime="2025-03-05" class="text-sm font-medium">
-            2025 年 03 月 05 日
-          </time>
-        </div>
-      
-
-      
-      
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="阅读时间"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-          <span class="text-sm font-medium">1 分钟</span>
-        </div>
-      
-
-
-      
-    
-  </div>
-
-
-
-
-            </div>
-          
-        </div>
-      </div>
-    </a>
-  </article>
-
-
-
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <article class="main-card group">
-    <a href="/05c3a514/" class="main-card-link block">
-      <div
-        class="bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 relative flex min-h-[200px] flex-col overflow-hidden rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none">
-        
-        <div class="block md:hidden">
-          <div class="aspect-[2/1] overflow-hidden">
-    <img
-      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091307500.webp"
-      alt="我感觉，现在离自己的梦想更近了一步！"
-      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-      loading="lazy"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-    
-    <div class="from-indigo-500/20 to-purple-500/10 relative aspect-[2/1] overflow-hidden bg-gradient-to-br" style="display: none; background-blend-mode: overlay; background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);">
-      
-      <div class="absolute inset-0">
-        
-          
-          
-          <div class="absolute left-[20%] top-[20%] h-5 w-5 rotate-0 bg-white/80" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"></div>
-          
-          <div class="absolute right-[25%] top-[25%] h-4 w-4 rotate-36 bg-white/70" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"></div>
-          
-          <div class="absolute left-[30%] bottom-[30%] h-3 w-3 rotate-72 bg-white/60" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"></div>
-          
-          <div class="absolute right-[20%] bottom-[20%] h-4 w-4 rotate-108 bg-white/65" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"></div>
-          
-          <div class="absolute left-[45%] top-[45%] h-2 w-2 rotate-144 bg-white/50" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"></div>
+          <div class="absolute left-[45%] top-[40%] -rotate-15">
+            <div class="h-0 w-0 border-l-[5px] border-r-[5px] border-b-[8px] border-l-transparent border-r-transparent border-b-white/50"></div>
+          </div>
           
           <div class="absolute right-[35%] top-[35%] h-2 w-2 rounded-full bg-white/40"></div>
           <div class="absolute left-[40%] bottom-[35%] h-1.5 w-1.5 rounded-full bg-white/35"></div>
           <div class="absolute right-[45%] bottom-[45%] h-1 w-1 rounded-full bg-white/30"></div>
           
-          <div class="absolute top-[30%] left-[30%] h-0.5 w-6 rotate-30 bg-white/25"></div>
-          <div class="absolute bottom-[30%] right-[30%] h-0.5 w-4 -rotate-45 bg-white/20"></div>
-        
-      </div>
-    </div>
-  
-</div>
-        </div>
-
-        
-        <div
-          class="absolute top-0 right-0 hidden h-full w-64 transition-opacity duration-300 group-hover:opacity-90 md:block">
-          <div class="h-full w-full">
-    <img
-      src="https://img-1300288738.cos.ap-beijing.myqcloud.com/PicGo_Home/202503091307500.webp"
-      alt="我感觉，现在离自己的梦想更近了一步！"
-      class="h-full w-full object-cover"
-      loading="lazy"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-    
-    <div class="from-indigo-500/20 to-purple-500/10 relative h-full w-full overflow-hidden bg-gradient-to-br" style="display: none; background-blend-mode: overlay; background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);">
-      
-      <div class="absolute inset-0">
-        
-          
-          
-          <div class="absolute left-[20%] top-[20%] h-5 w-5 rotate-0 bg-white/80" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"></div>
-          
-          <div class="absolute right-[25%] top-[25%] h-4 w-4 rotate-36 bg-white/70" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"></div>
-          
-          <div class="absolute left-[30%] bottom-[30%] h-3 w-3 rotate-72 bg-white/60" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"></div>
-          
-          <div class="absolute right-[20%] bottom-[20%] h-4 w-4 rotate-108 bg-white/65" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"></div>
-          
-          <div class="absolute left-[45%] top-[45%] h-2 w-2 rotate-144 bg-white/50" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"></div>
-          
-          <div class="absolute right-[35%] top-[35%] h-2 w-2 rounded-full bg-white/40"></div>
-          <div class="absolute left-[40%] bottom-[35%] h-1.5 w-1.5 rounded-full bg-white/35"></div>
-          <div class="absolute right-[45%] bottom-[45%] h-1 w-1 rounded-full bg-white/30"></div>
-          
-          <div class="absolute top-[30%] left-[30%] h-0.5 w-6 rotate-30 bg-white/25"></div>
-          <div class="absolute bottom-[30%] right-[30%] h-0.5 w-4 -rotate-45 bg-white/20"></div>
+          <div class="absolute top-[30%] left-[30%] h-0.5 w-6 rotate-45 bg-white/25"></div>
+          <div class="absolute bottom-[30%] right-[30%] h-0.5 w-4 -rotate-30 bg-white/20"></div>
         
       </div>
     </div>
@@ -1815,7 +1200,7 @@
             
             <h3
               class="text-foreground group-hover:text-primary line-clamp-2 text-lg leading-tight font-semibold transition-colors duration-200">
-              我感觉，现在离自己的梦想更近了一步！
+              遗憾的终章「吹响吧！上低音号」第三季观后感
             </h3>
 
             
@@ -1823,7 +1208,7 @@
               
                 <p
                   class="text-muted-foreground line-clamp-2 text-sm leading-relaxed">
-                  我感觉，现在离自己的梦想更近了一步！
+                  然后，下一曲还会奏响吗？
 
                 </p>
               
@@ -1861,8 +1246,8 @@
     stroke="currentColor"
     viewBox="0 0 24 24" aria-label="发布于"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
 </svg>
-          <time datetime="2025-01-10" class="text-sm font-medium">
-            2025 年 01 月 10 日
+          <time datetime="2024-06-30" class="text-sm font-medium">
+            2024 年 06 月 30 日
           </time>
         </div>
       
@@ -1901,40 +1286,12 @@
     </div>
 
     
-    
-      <div class="mt-8 text-center">
-        <a
-          href="/posts/"
-          class="bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-primary/20 inline-flex items-center gap-2 rounded-xl px-6 py-3 font-medium shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 hover:shadow-lg focus:ring-2 focus:outline-none active:scale-95">
-          
-  <svg class="h-5 w-5"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="文章">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-
-</svg>
-          <span>查看所有文章</span>
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-</svg>
-        </a>
-      </div>
     
 
   </section>
 
 
-
-
-    
-    
-
-
-</div><script type="text/javascript" src="js/cal-heatmap.js"></script>
+  
 
 
     </main>
@@ -2139,6 +1496,28 @@
   <nav
     class="border-border bg-card/80 scrollbar-hide xs:px-3 xs:py-2 mx-auto flex max-w-[calc(100vw-2rem)] min-w-fit items-center justify-center overflow-x-auto rounded-2xl border px-4 py-3 shadow-lg backdrop-blur-sm sm:px-4 sm:py-3">
     
+    
+      <button
+        id="dock-back"
+        class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 xs:px-2 xs:py-1.5 flex flex-shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none sm:px-3 sm:py-2"
+        title="返回"
+        aria-label="返回">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+  <path d="m12 19-7-7 7-7"/>
+  <path d="M19 12H5"/>
+
+</svg>
+        <span class="hidden sm:inline"
+          >返回</span
+        >
+      </button>
+
+      
+      <div class="bg-border xs:mx-1 mx-2 h-6 w-px sm:mx-2"></div>
     
 
 

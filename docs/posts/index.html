@@ -3,14 +3,13 @@
   lang="zh-CN"
   data-theme="default">
   <head>
-	<meta name="generator" content="Hugo 0.148.1">
     <meta charset="utf-8" />
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<title>Write Here</title>
+<title>Posts | Write Here</title>
 
 <meta name="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design." />
 <meta name="keywords" content="Hugo, Blog, Theme, Technology, Programming" />
@@ -18,7 +17,7 @@
 <meta name="language" content="zh-CN" />
 
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://freddie-fu-git.github.io/" />
+<link rel="canonical" href="https://freddie-fu-git.github.io/posts/" />
 
 
 
@@ -27,9 +26,9 @@
 
 
 <link rel="manifest" href="/site.webmanifest" />
-<meta property="og:url" content="https://freddie-fu-git.github.io/">
+<meta property="og:url" content="https://freddie-fu-git.github.io/posts/">
   <meta property="og:site_name" content="Write Here">
-  <meta property="og:title" content="Write Here">
+  <meta property="og:title" content="Posts">
   <meta property="og:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="website">
@@ -38,11 +37,11 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://freddie-fu-git.github.io/images/og-default.avif">
-  <meta name="twitter:title" content="Write Here">
+  <meta name="twitter:title" content="Posts">
   <meta name="twitter:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
 
 
-  <meta itemprop="name" content="Write Here">
+  <meta itemprop="name" content="Posts">
   <meta itemprop="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
   <meta itemprop="datePublished" content="2025-04-05T21:44:51+08:00">
   <meta itemprop="dateModified" content="2025-04-05T21:44:51+08:00">
@@ -54,7 +53,7 @@
     rel="alternate"
     type="application/rss+xml"
     title="Write Here"
-    href="https://freddie-fu-git.github.io/index.xml" />
+    href="https://freddie-fu-git.github.io/posts/index.xml" />
 
 
 
@@ -225,18 +224,6 @@
   <link rel="stylesheet" href="/css/glightbox.min.css">
 
 
-<script src="https://d3js.org/d3.v7.min.js"></script>
-
-<script src="https://unpkg.com/cal-heatmap@4.0.0-beta.9/dist/cal-heatmap.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/cal-heatmap@4.0.0-beta.9/dist/cal-heatmap.css"></script>
-
-
-
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-
-<script src="https://unpkg.com/tippy.js@6"></script>
-
 
         <script
           src="/js/main.ba969e49a7a874e6938fe689a7dcaa00cb64cb4d429c2cf98d09bde512a16c6d.js"
@@ -326,6 +313,112 @@
   <body class="bg-background text-foreground min-h-screen antialiased">
     
     
+  <div
+    id="reading-progress-container"
+    class="reading-progress-container pointer-events-none fixed top-0 right-0 left-0 z-50 transition-opacity duration-300 ease-out"
+    data-height="3"
+    data-smooth-scroll="true"
+    data-hide-on-complete="false">
+    
+    <div class="reading-progress-bg w-full"></div>
+
+    
+    <div
+      id="reading-progress-bar"
+      class="from-primary to-primary/80 reading-progress-bar 
+        transition-all duration-150 ease-out
+       absolute top-0 left-0 w-0 bg-gradient-to-r"></div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const progressContainer = document.getElementById(
+        "reading-progress-container",
+      );
+      const progressBar = document.getElementById("reading-progress-bar");
+
+      if (!progressContainer || !progressBar) return;
+
+      
+      const config = {
+        smoothScroll: progressContainer.dataset.smoothScroll === "true",
+        hideOnComplete: progressContainer.dataset.hideOnComplete === "true",
+      };
+
+      let isVisible = true;
+      let gumshoeInstance = null;
+
+      
+      function calculateProgress() {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollableHeight = documentHeight - windowHeight;
+
+        if (scrollableHeight <= 0) return 0;
+
+        return Math.min(Math.max((scrollTop / scrollableHeight) * 100, 0), 100);
+      }
+
+      
+      function updateProgress() {
+        const progress = calculateProgress();
+        progressBar.style.width = progress + "%";
+
+        
+        if (config.hideOnComplete && progress >= 99.5) {
+          if (isVisible) {
+            progressContainer.style.opacity = "0";
+            isVisible = false;
+          }
+        } else if (!isVisible) {
+          progressContainer.style.opacity = "1";
+          isVisible = true;
+        }
+      }
+
+      
+      let ticking = false;
+      function requestTick() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            updateProgress();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      
+      function init() {
+        
+        window.addEventListener("scroll", requestTick, { passive: true });
+        window.addEventListener("resize", requestTick, { passive: true });
+        document.addEventListener("visibilitychange", () => {
+          if (!document.hidden) requestTick();
+        });
+
+        
+        requestTick();
+
+        
+        window.addEventListener("beforeunload", () => {
+          window.removeEventListener("scroll", requestTick);
+          window.removeEventListener("resize", requestTick);
+        });
+      }
+
+      
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+    })();
+  </script>
 
     <header class="sticky top-0 z-50 mx-auto max-w-4xl px-4 py-6">
   <div
@@ -363,7 +456,7 @@
             <a
               href="/posts/"
               class="nav-link 
-                text-muted-foreground hover:text-primary hover:bg-primary/10
+                nav-active-indicator bg-accent text-accent-foreground
                focus:ring-primary/20 relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none">
               
                 
@@ -613,10 +706,10 @@
         <a
           href="/posts/"
           class="nav-link 
-            text-muted-foreground hover:text-primary hover:bg-primary/10
+            nav-active-indicator bg-accent text-accent-foreground
            focus:ring-primary/20 relative flex items-center gap-3 rounded-md px-4 py-3 text-sm font-medium transition-all duration-200 ease-out hover:translate-x-1 focus:ring-2 focus:outline-none"
           role="menuitem"
-          >
+          aria-current="page">
           
             
   <svg class="h-5 w-5"
@@ -835,49 +928,113 @@
 
     <main class="mx-auto max-w-4xl px-4 py-6">
       
-<div class="mx-auto max-w-4xl">
+  <div class="mx-auto max-w-4xl">
+    
+    <nav
+  class="breadcrumb mb-4 md:mb-6 py-1"
+  aria-label="面包屑导航">
+  <ol class="text-muted-foreground flex items-center space-x-1 md:space-x-2 text-sm overflow-x-auto whitespace-nowrap scrollbar-hide py-1">
+    
+    <li class="flex-shrink-0">
+      <a
+        href="/"
+        class="text-muted-foreground hover:text-primary hover:bg-primary/10 flex items-center gap-0.5 md:gap-1 rounded-lg px-1 md:px-3 py-0.5 md:py-1.5 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02]">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24" aria-label="首页">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m3 12 2-2m0 0 7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+
+</svg>
+        <span class="max-w-[4rem] md:max-w-none truncate">首页</span>
+      </a>
+    </li>
+
     
     
-    <section class="author-section mb-12">
-        <div class="bg-card border-border rounded-xl border p-8 shadow-sm">
-            <div class="flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:text-left">
-                
-                <div class="flex-shrink-0">
-                    
-                    <img src="/images/avatar.webp" alt="FreddieFu"
-                        class="border-primary/20 h-24 w-24 rounded-full border-4 object-cover shadow-lg" />
-                    
-                </div>
+      <li class="flex items-center gap-1 md:gap-2 min-w-0">
+        <span class="text-muted-foreground/50 flex-shrink-0"
+          >
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+</svg>
+        </span>
 
-                
-                <div class="min-w-0 flex-1">
-                    <h1 class="text-foreground mb-2 text-3xl font-bold">
-                        FreddieFu
-                    </h1>
+        
+          
+          <span class="text-foreground flex items-center gap-0.5 md:gap-1 font-medium min-w-0 flex-shrink-0">
+            
+              
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
 
-                    
+</svg>
+              <span class="max-w-[3rem] md:max-w-none truncate">文章</span>
+            
+          </span>
+        
+      </li>
+    
 
-                    
-                    <p class="text-foreground leading-relaxed">
-                        HR 文化培训专员 | 游戏本地化译员
-                    </p>
-                    
+  </ol>
+</nav>
 
-                    
-                    
-                </div>
-                <div id="cal-heatmap"></div>
-            </div>
+
+
+    
+    <header class="mb-8">
+      <h1 class="text-foreground mb-4 text-3xl font-bold">
+        文章
+      </h1>
+
+      
+        <p class="text-muted-foreground mb-6">
+          这里是所有已发布的文章，按时间倒序排列。
+        </p>
+      
+
+
+      
+      <div class="text-muted-foreground flex items-center gap-4 text-sm">
+        <div class="flex items-center gap-1">
+          
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+</svg>
+          <span
+            >共 11 篇文章</span
+          >
         </div>
-    </section>
-    
+        
+          <div class="flex items-center gap-1">
+            
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l3.09 6.26L22 9l-5.91.74L12 16l-4.09-6.26L2 9l5.91-.74L12 2z" />
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 17l10 5 10-5" />
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 12l10 5 10-5" />
+</svg>
+            <span
+              >共 3 页</span
+            >
+          </div>
+        
+      </div>
+    </header>
 
-
     
     
     
-
-    
+      
 
 
 
@@ -888,10 +1045,6 @@
 
   <section class="post-list">
     
-    
-      <div class="mb-6 flex items-center justify-between">
-        <h2 class="text-foreground text-2xl font-bold">最近文章</h2>
-      </div>
     
 
 
@@ -1902,19 +2055,103 @@
 
     
     
-      <div class="mt-8 text-center">
-        <a
-          href="/posts/"
-          class="bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-primary/20 inline-flex items-center gap-2 rounded-xl px-6 py-3 font-medium shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 hover:shadow-lg focus:ring-2 focus:outline-none active:scale-95">
+
+  </section>
+
+
+    
+
+
+    
+    
+
+
+
+
+  <nav
+    class="pagination mt-12"
+    aria-label="分页导航">
+    <div class="flex items-center justify-center gap-2">
+      
+      
+        <span
+          class="bg-muted/30 border-border/50 text-muted-foreground inline-flex cursor-not-allowed items-center gap-2 rounded-lg border px-4 py-2">
           
-  <svg class="h-5 w-5"
+  <svg class="h-4 w-4"
     fill="none"
     stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="文章">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 </svg>
-          <span>查看所有文章</span>
+          <span class="hidden sm:inline"
+            >上一页</span
+          >
+        </span>
+      
+
+
+      
+      <div class="flex items-center gap-1">
+        
+        
+
+
+        
+        
+
+
+        
+        
+          
+          
+            
+              
+              <span
+                class="bg-primary text-primary-foreground flex h-10 w-10 items-center justify-center rounded-lg font-medium"
+                aria-current="page">
+                1
+              </span>
+            
+          
+        
+          
+          
+            
+              
+              <a
+                href="/posts/page/2/"
+                class="border-border hover:bg-accent/50 hover:border-primary/20 flex h-10 w-10 items-center justify-center rounded-lg border font-medium transition-all duration-300">
+                2
+              </a>
+            
+          
+        
+          
+          
+            
+              
+              <a
+                href="/posts/page/3/"
+                class="border-border hover:bg-accent/50 hover:border-primary/20 flex h-10 w-10 items-center justify-center rounded-lg border font-medium transition-all duration-300">
+                3
+              </a>
+            
+          
+        
+
+
+        
+        
+      </div>
+
+      
+      
+        <a
+          href="/posts/page/2/"
+          class="bg-card border-border hover:bg-accent/50 hover:border-primary/20 inline-flex items-center gap-2 rounded-lg border px-4 py-2 font-medium transition-all duration-300"
+          aria-label="下一页">
+          <span class="hidden sm:inline"
+            >下一页</span
+          >
           
   <svg class="h-4 w-4"
     fill="none"
@@ -1922,20 +2159,19 @@
     viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
 </svg>
         </a>
-      </div>
-    
+      
 
-  </section>
-
-
-
+    </div>
 
     
-    
+    <div class="text-muted-foreground mt-4 text-center text-sm">
+      第 1 页，共 3 页
+    </div>
+  </nav>
 
 
-</div><script type="text/javascript" src="js/cal-heatmap.js"></script>
 
+  </div>
 
     </main>
 
@@ -2139,6 +2375,28 @@
   <nav
     class="border-border bg-card/80 scrollbar-hide xs:px-3 xs:py-2 mx-auto flex max-w-[calc(100vw-2rem)] min-w-fit items-center justify-center overflow-x-auto rounded-2xl border px-4 py-3 shadow-lg backdrop-blur-sm sm:px-4 sm:py-3">
     
+    
+      <button
+        id="dock-back"
+        class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 xs:px-2 xs:py-1.5 flex flex-shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none sm:px-3 sm:py-2"
+        title="返回"
+        aria-label="返回">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+  <path d="m12 19-7-7 7-7"/>
+  <path d="M19 12H5"/>
+
+</svg>
+        <span class="hidden sm:inline"
+          >返回</span
+        >
+      </button>
+
+      
+      <div class="bg-border xs:mx-1 mx-2 h-6 w-px sm:mx-2"></div>
     
 
 
