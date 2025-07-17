@@ -1,4 +1,4 @@
-baseURL: https://freddie-fu-git.github.io/
+baseURL: https://www.writehere.ink
 languageCode: zh-CN
 defaultContentLanguage: zh-cn
 defaultContentLanguageInSubdir: false
@@ -294,8 +294,8 @@ params:
   lightbox:
     enabled: true
     loop: true
-    width: 80vw
-    height: 80vh
+    width: auto
+    height: auto
     touchNavigation: true
     draggable: true
     zoomable: true
@@ -305,14 +305,14 @@ params:
   # Justified Gallery
   justified_gallery:
     enabled: true
-    rowHeight: 500
-    gutter: 30
+    rowHeight: 300
+    gutter: 10
     lastRow: center
     transitionDuration: 0.3s
     resizeDebounce: 100
     rowHeightTolerance: 0.25
     maxRowsCount: 999999
-    calculateItemsHeight: false
+    calculateItemsHeight: true
 
 markup:
   tableOfContents:
