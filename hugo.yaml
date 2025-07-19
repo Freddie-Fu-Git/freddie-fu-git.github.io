@@ -305,7 +305,7 @@ params:
   # Justified Gallery
   justified_gallery:
     enabled: true
-    rowHeight: 450
+    rowHeight: 480
     gutter: 10
     lastRow: center
     transitionDuration: 0.3s
