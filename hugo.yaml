@@ -210,7 +210,7 @@ params:
 
   # comments
   comments:
-    enabled: false
+    enabled: true
     # giscus, disqus, utterances, waline, artalk, twikoo
     system: "giscus"
 
@@ -237,7 +237,7 @@ params:
       theme: "preferred-color-scheme"
 
     waline:
-      serverURL: ""
+      serverURL: "https://waline.writehere.ink"
       lang: "zh-CN"
 
     artalk:
@@ -305,7 +305,7 @@ params:
   # Justified Gallery
   justified_gallery:
     enabled: true
-    rowHeight: 300
+    rowHeight: auto
     gutter: 10
     lastRow: center
     transitionDuration: 0.3s
