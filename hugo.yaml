@@ -212,7 +212,7 @@ params:
   comments:
     enabled: true
     # giscus, disqus, utterances, waline, artalk, twikoo
-    system: "giscus"
+    system: "waline"
 
     giscus:
       repo: "tom2almighty/hugo-narrow-giscus"
@@ -305,7 +305,7 @@ params:
   # Justified Gallery
   justified_gallery:
     enabled: true
-    rowHeight: auto
+    rowHeight: 350
     gutter: 10
     lastRow: center
     transitionDuration: 0.3s
