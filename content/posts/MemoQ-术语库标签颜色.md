@@ -1,7 +1,7 @@
 ---
 date: 2025-08-01T22:29:55+08:00
 draft: false
-title: MemoQ 术语库标签颜色
+title: MemoQ 术语库标签颜色的不同含义
 slug: 23989faf
 comments: true
 categories: ["工作"]
